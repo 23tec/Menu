@@ -65,7 +65,7 @@
 #define PushButtonPin   PINB0
 #define StepsPerNotch   4
 ClickEncoder *encoder;
-int buttonPressed_i = 0;
+int8_t buttonPressed_i = 0;
 boolean rotary_accel = false;
 boolean rotary_off = false;
 boolean stopPressEvent = false;
@@ -73,21 +73,21 @@ boolean stopPressEvent = false;
 // ----------------------------------------------------------------------------
 // Menu Cursor
 //
-int screenEnd = 4;
-int startY = 0;
-int scroll = 0;
-int cursor = 0;
-int rectY = 0;
-int _cr = 0, _ry = 0, _sl = 0;
+int8_t screenEnd = 4;
+int8_t startY = 0;
+int8_t scroll = 0;
+int8_t cursor = 0;
+int8_t rectY = 0;
+int8_t _cr = 0, _ry = 0, _sl = 0;
 
 // ----------------------------------------------------------------------------
 // Item Scroll
 //
 #define BUFSIZE (int) (SCR_WIDTH / FONT_W) - 1
 char rect_buf[BUFSIZE+1];
-int head = 0, tail = 0;
-int direction = 0;
-int offset = BUFSIZE;
+int8_t head = 0, tail = 0;
+int8_t direction = 0;
+int8_t offset = BUFSIZE;
 
 // ----------------------------------------------------------------------------
 #define MAX_ITEMS 5
@@ -134,8 +134,8 @@ typedef struct {
 // ----------------------------------------------------------------------------
 // List of items of an opened menu
 MenuItem *itemsList[MAX_ITEMS];
-int indexMenu = 0;
-int arrayLen = 0;
+int8_t indexMenu = 0;
+int8_t arrayLen = 0;
 
 // Items identifier 
 #define LOOP  0
