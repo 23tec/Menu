@@ -1,6 +1,5 @@
 // Menu - Angelo Z. (2025)
 
-
 /*
   A menu on a oled display 128x64.
 
@@ -144,8 +143,7 @@ int arrayLen = 0;
 
 //----------------------------------------------------------------------------
 MenuItem hardware_configuration[] = {
-    { "CLOCK", 8000, 8000, 160000000, c, Item | Scrolling
-     },
+    { "CLOCK", 8000, 8000, 160000000, _lcd, Item | Scrolling },
     { "<-", 0, 0, 0, leaveMenu, Button }
 };
 /*
@@ -266,11 +264,11 @@ void underscoreCursor(boolean yesno) {
 
 /*
 =====================
- void clockGen
+ void lcd
 =====================
 */
 // Su display lcd
-void clockGen() {
+void _lcd() {
     MenuItem *mi = itemsList[ cursor ];
     // Mappa di elementi per lo scorrimento cursore
     int8_t digits[11] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, OK, LEAVE };
