@@ -128,7 +128,7 @@ typedef struct {
 typedef struct {
     const char *text;
     MenuItem *item;
-    unsigned short items;
+    size_t items;
 } Menu;
 
 // ----------------------------------------------------------------------------
