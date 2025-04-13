@@ -186,7 +186,7 @@ void checkMe() {
 =====================
 */
 // Decomposizione di un numero in cifre
-void push(long number, int8_t frame[]) {
+inline void push(long number, int8_t frame[]) {
     for (int i = N_DIGITS - 1; i >= 0 && number > 0; i--) {
         frame[i] = number % 10;
         number /= 10;
@@ -200,7 +200,7 @@ void push(long number, int8_t frame[]) {
 =====================
 */
 // Composizione di cifre in un numero intero
-long pop(int8_t frame[]) {
+inline long pop(int8_t frame[]) {
     long n = 0;
 
     for (int i = 0; i < N_DIGITS; i++)
