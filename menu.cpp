@@ -324,7 +324,7 @@ void _lcd() {
     if (!confirm) {   
         int16_t delta = encoder->getValue();
     
-        if ( delta != 0 ) {
+        if ( delta != 0 && !buttonReleased() ) {
             // Per cifre 
             if (updown) {
                 digits[x] += delta;
