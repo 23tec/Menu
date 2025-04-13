@@ -308,7 +308,7 @@ void _lcd() {
   
         for ( int i = 0; i < N_DIGITS; i++ ) {
             lcd.print( digits[i] );
-            if ( (i + 1 ) % 3 == 0 && i != N_DIGITS - 1)
+            if ( (i + 1) % 3 == 0 && i != N_DIGITS - 1)
                 lcd.print(" ");
         }
         
@@ -642,7 +642,6 @@ void cursorDown() {
  void cursorUp
 =====================
 */
-// Button up
 void cursorUp()  {
     if (rotary_off)
         return;        
