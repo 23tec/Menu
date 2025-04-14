@@ -616,8 +616,8 @@ void cursorDown() {
     if (cursor == arrayLen - 1) {
         if (loopMenu)
         {
-            cursor = isLabel(cursor);
-            rectY  = isLabel(cursor);
+            cursor = isLabel(0);
+            rectY  = isLabel(0);
             scroll = 0;
 
             keyPressTone();
