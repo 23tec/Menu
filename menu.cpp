@@ -600,7 +600,8 @@ void drawScrollbar() {
     drawBox(124, 62 / arrayLen * cursor, 3, 62 / arrayLen);
 }
 
-
+boolean isLabel(int8_t curPos) {
+    return (hasMask(itemsList[curPos], Label));
 /*
 =====================
  void cusorDown
@@ -613,8 +614,8 @@ void cursorDown() {
     if (cursor == arrayLen - 1) {
         if (loopMenu)
         {
-            cursor = 0;
-            rectY = 0;
+            cursor = isLabel(cursor);
+            rectY  = isLabel(cursor);
             scroll = 0;
 
             keyPressTone();
@@ -633,6 +634,8 @@ void cursorDown() {
         rectY++;
     }
 
+    if (isLabel(cursor)) cursorDown();
+  
     keyPressTone();
 }
 
@@ -645,7 +648,9 @@ void cursorDown() {
 void cursorUp()  {
     if (rotary_off)
         return;        
-        
+  
+    if ((cursor - 1) == 0 && isLabel(0)) cursor = 0;
+  
     if (cursor == 0) {
         if (loopMenu) {
             cursor = arrayLen - 1;
@@ -657,7 +662,9 @@ void cursorUp()  {
                 rectY = screenEnd - 1;
                 scroll = arrayLen - screenEnd;
             }
-
+          
+            if (isLabel(cursor))
+                cursorUp();
             keyPressTone();
         }
 
@@ -672,7 +679,10 @@ void cursorUp()  {
     }
 
     cursor--;
-    
+  
+    if (isLabel(cursor)) 
+      cursorUp();
+  
     keyPressTone();
 }
 
