@@ -602,6 +602,8 @@ void drawScrollbar() {
 
 boolean isLabel(int8_t curPos) {
     return (hasMask(itemsList[curPos], Label));
+}
+
 /*
 =====================
  void cusorDown
