@@ -696,8 +696,8 @@ void cursorUp()  {
         rectY--;
     }
 
-    cursor--;
 
+    cursor--;
 
 
  end:
@@ -964,8 +964,10 @@ void drawImage(const char *icon) {
 void window() {
     MenuItem *mi;
     
-    if (!inMenu) mi = itemsList[cursor];
-    if (!inMenu && IsLocked(mi)) {
+    if (!inMenu) {
+      mi = itemsList[cursor];
+      
+      if (IsLocked(mi)) {
         stopPressEvent = true;
 
         if (buttonPressed()) drawImage("X");
@@ -976,6 +978,7 @@ void window() {
             unlockItem(mi); 
             buttonPressed_i = 2;
         }
+      }
     }
 
     if (!stopPressEvent) 
