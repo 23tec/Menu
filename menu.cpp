@@ -267,7 +267,7 @@ void underscoreCursor(boolean yesno) {
 
 /*
 =====================
- void clockGen
+ void _lcd
 =====================
 */
 // Su display lcd
