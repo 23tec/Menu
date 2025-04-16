@@ -962,23 +962,23 @@ void drawImage(const char *icon) {
 =====================
 */
 void window() {
-    MenuItem *mi;
+     MenuItem *mi;
     
-    if (!inMenu) {
-      mi = itemsList[cursor];
+     if (!inMenu) {
+       mi = itemsList[cursor];
       
-      if (IsLocked(mi)) {
-        stopPressEvent = true;
+       if (IsLocked(mi)) {
+         stopPressEvent = true;
 
-        if (buttonPressed()) drawImage("X");
+         if (buttonPressed()) drawImage("X");
 
-        // Sblocca con tasto premuto a lungo
-        if (buttonHold()) 
-        {
+         // Sblocca con tasto premuto a lungo
+         if (buttonHold()) 
+         {
             unlockItem(mi); 
             buttonPressed_i = 2;
-        }
-      }
+         }
+       }
     }
 
     if (!stopPressEvent) 
@@ -1191,7 +1191,7 @@ void openMenu() {
         indexMenu = cursor;
         arrayLen  = createList(itemsList);
         cursor    = isLabel(0);
-        rectY     = isLabel(0);
+        rectY     = cursor;
 
         inMenu = false;
     }
